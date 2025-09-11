@@ -92,3 +92,19 @@ button:hover {
   color: #555;
   letter-spacing: 0.5px;
 }
+.result button {
+  margin-top: 0.5rem;
+  margin-right: 0.5rem;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.9rem;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  background-color: #002D72;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+.result button:hover {
+  background-color: #0044a3;
+}
