@@ -14,20 +14,26 @@ h1 {
   font-weight: bold;
   margin-top: 10vh;
   text-align: center;
-  transition: color 0.3s ease;
+  transition: 0.3s ease-in-out;
+  cursor: pointer;
+}
+h1:hover{
+  transform: scale(1.10);
+
 }
 
 /* Input */
 .inputValue {
-  padding: 1rem 1.5rem;
+  padding: 1rem 1.6rem;
   margin: 2rem;
   border: none;
   outline: none;
   border-radius: 6px;
-  transition: 0.3s ease-in-out, box-shadow 0.3s ease;
+  transition: 0.6s ease-in-out, box-shadow 0.3s ease;
 }
 
 .inputValue:focus {
+
   outline: 1px solid #0044a3;
   box-shadow: 0 0 10px rgba(0, 68, 163, 0.3);
 }
@@ -57,11 +63,11 @@ h1 {
   cursor: pointer;
   font-size: 0.95rem;
   border-radius: 6px;
-  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+  transition: transform 0.1s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .dia:hover {
-  transform: scale(1.05);
+  transform: scale(1.25);
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
@@ -77,6 +83,7 @@ git .container-button {
 }
 
 button {
+  margin-top: 0.6rem;
   padding: 0.8rem 1.5rem;
   font-size: 1rem;
   border: none;
@@ -89,7 +96,8 @@ button {
 
 button:hover {
   background-color: #0044a3;
-  transform: scale(1.05);
+  transform: scale(1.15);
+   
   box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
@@ -111,7 +119,7 @@ button:hover {
   padding: 1rem 1.5rem;
   box-shadow: 0 6px 15px rgba(0,0,0,0.12);
   border-radius: 8px;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: transform 0.6s ease, box-shadow 0.2s ease;
   cursor: pointer;
   word-break: break-word;
 }
@@ -126,7 +134,7 @@ button:hover {
   font-size: 1.2rem;
   font-weight: bold;
   color: #0044a3;
-  transition: color 0.3s ease;
+  transition: color 0.4s ease-in-out;
 }
 
 .dias-result {
