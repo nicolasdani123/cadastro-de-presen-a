@@ -1,6 +1,7 @@
 const diasSemana = document.querySelectorAll(".dia");
 const result = document.querySelector(".container-result");
 const registrar = document.querySelector(".registrar");
+const inputNome = document.querySelector(".inputValue");
 const key = "usuarios-data";
 
 diasSemana.forEach(dia => {
@@ -15,8 +16,11 @@ diasSemana.forEach(dia => {
 });
 
 function registrarUsuario() {
-  const nome = prompt("Digite seu nome:")?.trim();
-  if (!nome) return;
+  const nome = inputNome.value.trim();
+  if (!nome) {
+    alert("Por favor, digite seu nome.");
+    return;
+  }
 
   const diasSelecionados = [...document.querySelectorAll(".dia.active")].map(d => d.textContent);
   if (diasSelecionados.length === 0) {
@@ -24,10 +28,14 @@ function registrarUsuario() {
     return;
   }
 
+  const confirmar = confirm(`Confirmar registro de ${nome} nos dias: ${diasSelecionados.join(", ")}?`);
+  if (!confirmar) return;
+
   const usuarios = pegarUsuarios();
   usuarios.push({ nome, dias: diasSelecionados });
   salvarUsuarios(usuarios);
 
+  inputNome.value = "";
   diasSemana.forEach(d => d.classList.remove("active"));
   renderizarResultados();
 }
@@ -42,7 +50,7 @@ function editarUsuario(index) {
   const novosDias = prompt("Editar dias (separados por espaço):", atual.dias.join(" "))?.trim();
   if (!novosDias) return;
 
-  const diasArray = novosDias.split(" ").slice(0, 2); 
+  const diasArray = novosDias.split(" ").slice(0, 2);
   usuarios[index] = { nome: novoNome, dias: diasArray };
   salvarUsuarios(usuarios);
   renderizarResultados();
@@ -71,12 +79,40 @@ function renderizarResultados() {
     const card = document.createElement("div");
     card.className = "result";
 
-    card.innerHTML = `
-      <h3>${nome}</h3>
-      <p>${dias.join(" ")}</p>
-      <button onclick="editarUsuario(${index})">Editar</button>
-      <button onclick="excluirUsuario(${index})">Excluir</button>
-    `;
+    const nomeEl = document.createElement("h3");
+    nomeEl.textContent = nome;
+    card.appendChild(nomeEl);
+
+    const diasContainer = document.createElement("div");
+    diasContainer.className = "dias-result";
+
+    dias.forEach(dia => {
+      const diaEl = document.createElement("span");
+      diaEl.className = "dia-result";
+      diaEl.textContent = dia;
+      diasContainer.appendChild(diaEl);
+    });
+
+    card.appendChild(diasContainer);
+
+    const actions = document.createElement("div");
+    actions.className = "result-actions";
+
+    const iconEditar = document.createElement("span");
+    iconEditar.className = "icon editar";
+    iconEditar.title = "Editar";
+    iconEditar.innerHTML = "✏️";
+    iconEditar.onclick = () => editarUsuario(index);
+
+    const iconExcluir = document.createElement("span");
+    iconExcluir.className = "icon excluir";
+    iconExcluir.title = "Excluir";
+    iconExcluir.innerHTML = "🗑️";
+    iconExcluir.onclick = () => excluirUsuario(index);
+
+    actions.appendChild(iconEditar);
+    actions.appendChild(iconExcluir);
+    card.appendChild(actions);
 
     result.appendChild(card);
   });
