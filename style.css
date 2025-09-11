@@ -1,101 +1,94 @@
 body {
-  font-family: Arial, sans-serif;
-  background: #f5f5f5;
   margin: 0;
-  padding: 1.25rem;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background-color: #f5f5f5;
+  text-align: center;
+  padding: 2rem;
 }
 
 h1 {
-  text-align: center;
-  color: #001e60;
-  font-size: 2rem;
+  color: #002D72;
+  margin-bottom: 2rem;
 }
 
-form {
+.dias {
   display: flex;
-  flex-direction: column;
-  gap: 0.75rem;
   justify-content: center;
+  gap: 1rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
   flex-wrap: wrap;
-  background: #fff;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.125rem 0.3125rem rgba(0,0,0,0.1);
 }
 
-input {
-  padding: 1rem;
-  font-size: 1rem;
-  border: 0.0625rem solid #ccc;
-  border-radius: 0.3125rem;
+.dia {
+  background-color: #FF6900;
+  padding: 1rem 2rem;
+  border-radius: 1rem;
+  font-weight: bold;
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.15);
+  transition: background-color 0.3s ease;
 }
 
-input:focus {
-  outline: 0.125rem solid #001e60;
+.dia.active {
+  background-color: #002D72;
 }
 
-select, button {
-  padding: 1rem;
-  font-size: 1rem;
-  border: 0.0625rem solid #ccc;
-  outline: 0.0625rem #001e60;
-  border-radius: 0.3125rem;
+.container-button {
+  margin-top: 2rem;
 }
 
 button {
-  background: #ec7000;
-  color: #fff;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
   border: none;
+  border-radius: 0.8rem;
+  background-color: #002D72;
+  color: #fff;
   cursor: pointer;
-  font-weight: bold;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
-  background: #d95f00;
+  background-color: #0044a3;
 }
 
-.card {
-  background: #fff;
-  padding: 2rem 0;
-  width: 80vw;
-  border-radius: 0.5rem;
-  box-shadow: 0 0.1875rem 0.5rem rgba(0,0,0,0.15);
-  margin: 1.25rem auto;
-  max-width: 37.5rem;
+.container-result {
   display: flex;
   justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  font-size: 1.125rem;
+  gap: 1.5rem;
+  margin-top: 2rem;
 }
 
-.card span {
-  flex: 1 1 100%;
-  margin-bottom: 0.625rem;
-  display: flex;
-  justify-content: center;
-  
+.result {
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  font-weight: 500;
+  color: #333;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+  min-width: 200px;
+  text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.acoes button {
-  background: #ec7000;
-  padding: 0.5rem 1.5rem;
-  margin: 0 0.5rem;
+.result:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.18);
+}
+
+.result h3 {
+  margin: 0 0 .5rem;
+  font-size: 1.2rem;
+  color: #002D72;
+}
+
+.result p {
+  margin: 0;
   font-size: 1rem;
-}
-
-.acoes button:hover {
-  background: #003080;
-  color: #fff;
-}
-
-@media (min-width: 1024px) {
-  form {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-  .card {
-    max-width: 800px;
-  }
+  color: #555;
+  letter-spacing: 0.5px;
 }
