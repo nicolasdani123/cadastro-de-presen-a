@@ -11,6 +11,7 @@ h1 {
   margin-bottom: 2rem;
   font-size: 2rem;
   font-weight: bold;
+  margin-top: 10vh;
 }
 
 .inputValue {
@@ -104,7 +105,7 @@ button:hover {
   margin: 0 0 0.5rem 0;
   font-size: 1.2rem;
   font-weight: bold;
-  color: #002D72;
+  color: #0044a3;
 }
 
 .dias-result {
@@ -142,5 +143,7 @@ button:hover {
 .dia.active {
   transform: scale(1.1);
   background-color: #002D72;
+
   color: white;
+
 }
