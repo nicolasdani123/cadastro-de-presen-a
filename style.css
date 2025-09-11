@@ -1,3 +1,4 @@
+/* Corpo e título */
 body {
   font-family: 'Segoe UI', Arial, sans-serif;
   background-color: #f0f2f5;
@@ -12,20 +13,26 @@ h1 {
   font-size: 2rem;
   font-weight: bold;
   margin-top: 10vh;
+  text-align: center;
+  transition: color 0.3s ease;
 }
 
+/* Input */
 .inputValue {
   padding: 1rem 1.5rem;
   margin: 2rem;
   border: none;
   outline: none;
-  transition: 0.3s ease-in-out;
+  border-radius: 6px;
+  transition: 0.3s ease-in-out, box-shadow 0.3s ease;
 }
 
 .inputValue:focus {
   outline: 1px solid #0044a3;
+  box-shadow: 0 0 10px rgba(0, 68, 163, 0.3);
 }
 
+/* Container de dias */
 .container-box {
   display: flex;
   justify-content: center;
@@ -38,7 +45,7 @@ h1 {
   gap: 0.8rem;
   list-style: none;
   padding: 0;
-  flex-wrap: wrap;  
+  flex-wrap: wrap;
 }
 
 .dia {
@@ -49,14 +56,23 @@ h1 {
   color: #fff;
   cursor: pointer;
   font-size: 0.95rem;
-  transition: all 0.3s ease;
+  border-radius: 6px;
+  transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.dia:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .dia.active {
-  background-color: #FF6900;
+  transform: scale(1.1);
+  background-color: #002D72;
+  color: white;
+  box-shadow: 0 6px 20px rgba(0, 45, 114, 0.4);
 }
 
-.container-button {
+git .container-button {
   margin-top: 2rem;
 }
 
@@ -67,12 +83,14 @@ button {
   background-color: #002D72;
   color: #fff;
   cursor: pointer;
-  transition: background-color 0.3s ease;
-  border-radius: 0.2rem;
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  border-radius: 0.3rem;
 }
 
 button:hover {
   background-color: #0044a3;
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
 }
 
 .container-result {
@@ -82,7 +100,9 @@ button:hover {
   margin-top: 2rem;
   width: 100%;
   max-width: 600px;
+  transition: all 0.3s ease;
 }
+
 .result {
   position: relative;
   display: flex;
@@ -97,8 +117,8 @@ button:hover {
 }
 
 .result:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  transform: translateY(-5px);
+  box-shadow: 0 12px 25px rgba(0,0,0,0.18);
 }
 
 .result h3 {
@@ -106,6 +126,7 @@ button:hover {
   font-size: 1.2rem;
   font-weight: bold;
   color: #0044a3;
+  transition: color 0.3s ease;
 }
 
 .dias-result {
@@ -124,6 +145,12 @@ button:hover {
   border-radius: 5px;
   word-break: break-word;
   text-align: center;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dia-result:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 .result-actions {
@@ -136,14 +163,4 @@ button:hover {
 
 .result:hover .result-actions {
   display: flex;
-}
-.dia {
-  transition: transform 0.3s, background-color 0.3s;
-}
-.dia.active {
-  transform: scale(1.1);
-  background-color: #002D72;
-
-  color: white;
-
 }
