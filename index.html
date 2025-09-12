@@ -3,28 +3,45 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Seleção de Dias</title>
+  <title>Trabalho Presencial</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Trabalho Presencial</h1>
+  <h1 id="tituloPagina">Trabalho Presencial</h1>
 
-  <div class="container-box">
-    <input type="text" placeholder="Digite seu nome" class="inputValue" />
-    <ul class="dias">
-      <li class="dia">Seg</li>
-      <li class="dia">Ter</li>
-      <li class="dia">Qua</li>
-      <li class="dia">Qui</li>
-      <li class="dia">Sex</li>
-    </ul>
+  <div id="telaPrincipal">
+    <div class="container-box">
+      <input type="text" placeholder="Digite seu nome" class="inputValue" />
+      <ul class="dias dias-principal">
+        <li class="dia">Seg</li>
+        <li class="dia">Ter</li>
+        <li class="dia">Qua</li>
+        <li class="dia">Qui</li>
+        <li class="dia">Sex</li>
+      </ul>
+    </div>
+    <div class="container-button">
+      <button class="registrar">Registrar</button>
+    </div>
+    <div class="container-result"></div>
   </div>
 
-  <div class="container-button">
-    <button class="registrar">Registrar</button>
+  <div id="telaEdicao" style="display: none;">
+    <div class="container-box">
+      <input type="text" id="editNome" placeholder="Nome" class="inputValue" />
+      <ul class="dias dias-edicao">
+        <li class="dia">Seg</li>
+        <li class="dia">Ter</li>
+        <li class="dia">Qua</li>
+        <li class="dia">Qui</li>
+        <li class="dia">Sex</li>
+      </ul>
+    </div>
+    <div class="container-button">
+      <button id="salvarEdicao">Salvar</button>
+      <button id="cancelarEdicao">Cancelar</button>
+    </div>
   </div>
-
-  <div class="container-result"></div>
 
   <script src="script.js"></script>
 </body>
