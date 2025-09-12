@@ -173,3 +173,8 @@ button:hover {
 .result:hover .result-actions {
   display: flex;
 }
+
+.container-button{
+  display: flex;
+  gap: 1rem;
+}
