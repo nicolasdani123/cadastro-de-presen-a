@@ -8,7 +8,6 @@ body {
 
 h1 {
   color: #002D72;
-  margin-bottom: 2rem;
   font-size: 2rem;
   font-weight: bold;
   margin-top: 10vh;
@@ -23,7 +22,7 @@ h1:hover {
 
 .inputValue {
   padding: 1rem 1.6rem;
-  margin: 2rem;
+  margin: 1rem;
   border: none;
   outline: none;
   border-radius: 6px;
@@ -80,7 +79,8 @@ h1:hover {
 }
 
 .container-button {
-  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
 }
 
 button {
@@ -114,7 +114,8 @@ button:hover {
 .result {
   position: relative;
   display: flex;
-  flex-direction: column;
+  gap: 2rem;
+  align-items: center;
   background: #fff;
   padding: 1rem 1.5rem;
   box-shadow: 0 6px 15px rgba(0,0,0,0.12);
@@ -130,7 +131,7 @@ button:hover {
 }
 
 .result h3 {
-  margin: 0 0 0.5rem 0;
+  margin: 0.8rem 0 0.5rem 0;
   font-size: 1.2rem;
   font-weight: bold;
   color: #0044a3;
